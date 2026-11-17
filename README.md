@@ -28,3 +28,12 @@ Los movimientos, categorías, cuentas, usuarios locales y contraseñas derivadas
 ## Esquema lógico de transferencias
 
 Cada transferencia tiene `fromId`, `toId`, `amount`, `date`, `note`. Los saldos de cuentas normales disminuyen en origen y aumentan en destino. En una cuenta de crédito, un pago reduce la deuda. Las transferencias no incrementan los totales de gastos ni de ingresos del mes.
+
+
+## Revisión V2.1: Vercel
+- Se agregó la sección `categories` y el contenedor `categoriesList`, cuya ausencia provocaba `Cannot set properties of null (setting 'innerHTML')` durante `render()` después del login.
+- Se corrigió el mensaje genérico de HTTPS del manejo de errores en el login.
+- Se actualizó la versión de caché del Service Worker para obtener el código corregido.
+- Se conserva la clave `localStorage` `hogar-finanzas-v1` sin migración destructiva; la actualización no borra datos existentes.
+- IMPORTANTE: no hay base de datos remota ni autenticación de servidor. Para el uso familiar real debe implementarse API, base de datos PostgreSQL, autenticación y sincronización.
+- Antes de cambiar de dominio, navegador o limpiar el almacenamiento exporta un respaldo JSON desde Ajustes.
