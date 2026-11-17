@@ -71,3 +71,7 @@ Si `main` está conectada a Vercel, el despliegue se ejecuta automáticamente. A
 - Desde incógnito u otro teléfono, inicia con familiar ya creado y verifica que el movimiento aparezca.
 - Prueba transferencia entre cuentas: disminuye origen y aumenta destino, sin contabilizarse en gastos/ingresos.
 - En caso de error de servidor revisa **Vercel → Logs** y el resultado de ejecutar `sql/schema.sql`.
+
+
+## Corrección V3.1
+Se agregó el campo de código de instalación `setupTokenWrap` y `setupToken` al formulario inicial para evitar el error `Cannot read properties of null (reading style)`. El código debe coincidir con la variable ADMIN_SETUP_TOKEN de Vercel. Se actualizó la caché PWA.
